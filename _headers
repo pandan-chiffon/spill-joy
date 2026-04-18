@@ -6,7 +6,7 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-eval' https://unpkg.com https://storage.ko-fi.com https://cdn.ko-fi.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://storage.ko-fi.com; font-src https://fonts.gstatic.com; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://ko-fi.com; img-src 'self' data: https://storage.ko-fi.com https://cdn.ko-fi.com; frame-src https://ko-fi.com;
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://storage.ko-fi.com https://cdn.ko-fi.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://storage.ko-fi.com; font-src https://fonts.gstatic.com; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://ko-fi.com https://unpkg.com; img-src 'self' data: https://storage.ko-fi.com https://cdn.ko-fi.com; frame-src https://ko-fi.com;
 
 /*.jsx
   Content-Type: application/javascript
