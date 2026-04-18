@@ -325,47 +325,6 @@ function App() {
         spill joy
       </div>
 
-      {/* Support button — bottom right.
-          TODO: replace href with your Buy Me a Coffee / Ko-fi / Stripe link,
-          and update data-service to "buymeacoffee", "kofi", or "stripe". */}
-      <a
-        href="#support"
-        data-service="tbc"
-        onClick={(e) => e.preventDefault()}
-        aria-label="Support Spill Joy — buy me a coffee"
-        style={{
-          position: 'absolute', bottom: 22, right: 24, zIndex: 10,
-          display: 'inline-flex', alignItems: 'center', gap: 8,
-          padding: '9px 14px 9px 12px', borderRadius: 999,
-          background: `${tone.ink}0d`,
-          border: `1px solid ${tone.ink}1f`,
-          color: tone.ink, opacity: 0.72,
-          fontSize: 12, letterSpacing: 0.4,
-          textDecoration: 'none', fontFamily: 'inherit',
-          transition: 'opacity 0.2s ease, background 0.2s ease, transform 0.2s ease',
-          backdropFilter: 'blur(4px)',
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.opacity   = '1';
-          e.currentTarget.style.background = `${tone.ink}14`;
-          e.currentTarget.style.transform  = 'translateY(-1px)';
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.opacity   = '0.72';
-          e.currentTarget.style.background = `${tone.ink}0d`;
-          e.currentTarget.style.transform  = 'none';
-        }}
-      >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"
-             aria-hidden="true">
-          <path d="M4 8h13v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" />
-          <path d="M17 9h2a2 2 0 0 1 0 4h-2" />
-          <path d="M7 3c0 1-1 1.5-1 2.5S7 7 7 8" opacity="0.7" />
-          <path d="M11 3c0 1-1 1.5-1 2.5S11 7 11 8" opacity="0.7" />
-        </svg>
-        <span>Buy me a coffee</span>
-      </a>
 
       {/* Screens */}
       {screen === 'ask' && (

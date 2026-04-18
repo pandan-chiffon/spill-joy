@@ -139,18 +139,27 @@
 <body>
   <div id="root"></div>
 
+  <footer style="position:fixed;bottom:10px;left:0;right:0;text-align:center;font-family:'Inter',-apple-system,system-ui,sans-serif;font-size:11px;letter-spacing:0.5px;color:rgba(0,0,0,0.35);pointer-events:none;z-index:5;">
+    a passion project by pandan chiffon
+  </footer>
+
   <!-- React 18 — production builds -->
-  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"
-          integrity="sha384-lTb4LmMOzmtHOoLBTiJoBlVpbCJbMdqSaataGMkKdAkUWEiQGCECiEoE+Svo1g8"
-          crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"
-          integrity="sha384-aNMkSCYoD1UXGfFdPqGJO0DRvz+aBRZcqDUMqhXo7dvqaEiV12C4PpVqxaTTTMT"
-          crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
 
   <!-- Babel standalone — compiles JSX in the browser (no build step required) -->
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"
-          integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y"
-          crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+  <!-- Ko-fi floating support widget -->
+  <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+  <script>
+    kofiWidgetOverlay.draw('pandanchiffon', {
+      'type': 'floating-chat',
+      'floating-chat.donateButton.text': 'Tip Us',
+      'floating-chat.donateButton.background-color': '#323842',
+      'floating-chat.donateButton.text-color': '#fff'
+    });
+  </script>
 
   <!-- App modules — load order matters: utilities first, app last -->
   <script src="quotes.js"></script>
