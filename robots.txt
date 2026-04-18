@@ -1,0 +1,8 @@
+# robots.txt — Spill Joy
+# Allows all crawlers on all paths.
+# Update the Sitemap URL once your domain is confirmed.
+
+User-agent: *
+Allow: /
+
+# Sitemap: https://spilljoy.com/sitemap.xml

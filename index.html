@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       AEO / SEO — fill in and update these as your content evolves
+       ═══════════════════════════════════════════════════════════════ -->
+
+  <!-- Page title: aim for 50–60 chars; primary keyword near the front -->
+  <title>Spill Joy — A Moment of Calm When You Need It Most</title>
+
+  <!-- Meta description: 150–160 chars; summarise the user benefit clearly -->
+  <meta name="description" content="Feeling overwhelmed? Type how you're feeling, receive an encouraging thought, and follow a science-backed breathing exercise to calm your nervous system in under two minutes." />
+
+  <!-- Canonical URL: replace with your actual domain once live -->
+  <link rel="canonical" href="https://spilljoy.com/" />
+
+  <!-- Open Graph (social sharing previews) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://spilljoy.com/" />
+  <meta property="og:site_name" content="Spill Joy" />
+  <meta property="og:title" content="Spill Joy — A Moment of Calm When You Need It Most" />
+  <meta property="og:description" content="Type how you're feeling. Get an encouraging thought and breathe, a science-backed micro-tool for your nervous system." />
+  <!-- og:image: replace with your actual social share image (1200×630px recommended) -->
+  <!-- <meta property="og:image" content="https://spilljoy.com/social-share.jpg" /> -->
+
+  <!-- Twitter / X card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Spill Joy — A Moment of Calm When You Need It Most" />
+  <meta name="twitter:description" content="Type how you're feeling. Get an encouraging thought and breathe, a science-backed micro-tool for your nervous system." />
+
+  <!-- AEO: Structured data — WebApplication schema.
+       AI answer engines (Google SGE, Perplexity, ChatGPT Browse) read this
+       to understand and cite what your app does. Update as you add features. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Spill Joy",
+    "url": "https://spilljoy.com/",
+    "description": "A free browser-based micro-wellness tool. Users type how they are feeling, receive a curated encouragement quote, and are guided through a 4-7-8 breathing exercise that activates the vagus nerve to shift the nervous system from stress to calm.",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Emotion check-in prompt",
+      "Curated encouragement quotes",
+      "Guided 4-7-8 breathing exercise",
+      "Animated breathing circle",
+      "Science-backed vagal activation explainer",
+      "Calming aurora gradient background",
+      "No account or download required"
+    ],
+    "creator": {
+      "@type": "Person",
+      "name": "Spill Joy"
+    }
+  }
+  </script>
+
+  <!-- AEO: FAQ schema — answers AI engines commonly surface as direct answers.
+       Add, remove, or rewrite Q&As to match what your audience searches for. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Spill Joy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Spill Joy is a free, browser-based micro-wellness tool. You type how you are feeling, receive an encouraging thought, and follow a guided breathing exercise — all in under two minutes, with no account or download needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the 4-7-8 breathing exercise work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The 4-7-8 technique involves inhaling for 4 seconds, holding the breath for 7 seconds, and exhaling slowly for 8 seconds. The extended exhale activates the vagus nerve, shifting the autonomic nervous system from a fight-or-flight stress response toward a rest-and-digest calm state."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Spill Joy free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Spill Joy is completely free. No account, no sign-up, and no download required. It runs in any modern web browser."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does paced breathing help with stress and anxiety?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Slow, paced breathing — especially with a longer exhale than inhale — stimulates the vagus nerve, the primary pathway of the parasympathetic nervous system. This signals to the body that it is safe, reducing cortisol, lowering heart rate, and moving the nervous system away from the fight-or-flight response toward calm."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0; height: 100%;
+      overflow: hidden;
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    }
+    body { -webkit-font-smoothing: antialiased; }
+    #root { width: 100vw; height: 100vh; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    input::placeholder { color: rgba(0, 0, 0, 0.3); }
+    button:focus-visible { outline: 2px solid rgba(0, 0, 0, 0.25); outline-offset: 2px; }
+
+    /* Accessibility: respect reduced-motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React 18 — production builds -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"
+          integrity="sha384-lTb4LmMOzmtHOoLBTiJoBlVpbCJbMdqSaataGMkKdAkUWEiQGCECiEoE+Svo1g8"
+          crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"
+          integrity="sha384-aNMkSCYoD1UXGfFdPqGJO0DRvz+aBRZcqDUMqhXo7dvqaEiV12C4PpVqxaTTTMT"
+          crossorigin="anonymous"></script>
+
+  <!-- Babel standalone — compiles JSX in the browser (no build step required) -->
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"
+          integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y"
+          crossorigin="anonymous"></script>
+
+  <!-- App modules — load order matters: utilities first, app last -->
+  <script src="quotes.js"></script>
+  <script type="text/babel" src="ui.jsx"></script>
+  <script type="text/babel" src="aurora.jsx"></script>
+  <script type="text/babel" src="breathing-circle.jsx"></script>
+  <script type="text/babel" src="app.jsx"></script>
+</body>
+</html>
