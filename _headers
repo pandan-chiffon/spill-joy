@@ -1,33 +1,15 @@
 # Cloudflare Pages — HTTP response headers
-# Applied to every response from this site.
 # Docs: https://developers.cloudflare.com/pages/configuration/headers/
 
 /*
-  # Prevent your site from being framed by other sites (clickjacking protection)
   X-Frame-Options: DENY
-  # Stop browsers guessing content types
   X-Content-Type-Options: nosniff
-  # Only send the bare origin as the referrer when crossing to another domain
   Referrer-Policy: strict-origin-when-cross-origin
-  # Restrict powerful browser features
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  # Content Security Policy
-  # - default-src 'self' allows same-origin resources
-  # - script-src allows React/ReactDOM/Babel from unpkg (CDN) + inline Babel transpilation
-  # - style-src allows Google Fonts + inline styles used by React
-  # - font-src allows Google Fonts files
-  # - connect-src allows Google Fonts metadata
-  # - img-src allows data URIs (used for the SVG grain texture)
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-eval' https://unpkg.com https://storage.ko-fi.com https://cdn.ko-fi.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://storage.ko-fi.com; font-src https://fonts.gstatic.com; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://ko-fi.com; img-src 'self' data: https://storage.ko-fi.com https://cdn.ko-fi.com; frame-src https://ko-fi.com;
 
-# Long cache for static assets (JS/JSX files don't change unless you redeploy)
-/*.js
-  Cache-Control: public, max-age=31536000, immutable
-
 /*.jsx
-  Content-Type: application/javascript; charset=utf-8
-  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: application/javascript
 
-# HTML: no cache — always fetch fresh so new deployments take effect immediately
 /*.html
   Cache-Control: no-cache, no-store, must-revalidate
