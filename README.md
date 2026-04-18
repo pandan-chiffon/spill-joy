@@ -2,7 +2,7 @@
 
 A free, browser-based micro-wellness tool. Type how you're feeling, receive an encouraging thought, and follow a guided breathing exercise — no account, no download, no build step.
 
-**Live site:** [spilljoy.com](https://spilljoy.com) *(update once deployed)*
+**Live site:** [spill-joy.pages.dev](https://spill-joy.pages.dev) *(update once deployed)*
 
 ---
 
