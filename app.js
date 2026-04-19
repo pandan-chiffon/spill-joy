@@ -15,7 +15,6 @@ const QUOTES = [
   "You don't need to earn your rest. You already deserve it.",
   "Someone is glad you exist today, even if they haven't texted yet.",
   "Your best is allowed to look different on different days.",
-  "That idea you have? It's not stupid. Explore it.",
   "You're allowed to outgrow things that used to fit you.",
   "The email can wait. Your peace can't.",
   "You've survived 100% of your hard days. That's a pretty good track record.",
