@@ -15,6 +15,30 @@ const DEFAULT_PALETTE      = 'dawn';
 const DEFAULT_PATTERN      = '4-7-8';
 const DEFAULT_SCIENCE_OPEN = true;
 
+// ─── Responsive size hook ──────────────────────────────────────────
+// Phones (< 480px) shrink the breathing circle so it fits within the
+// viewport and stays horizontally centered. iPad (>= 480px) and
+// desktop keep 460.
+function useResponsiveCircleSize(desktopSize = 460, mobileBreakpoint = 480, mobileGutter = 16) {
+  const get = () => {
+    if (typeof window === 'undefined') return desktopSize;
+    const w = window.innerWidth;
+    if (w >= mobileBreakpoint) return desktopSize;
+    return Math.max(240, Math.min(desktopSize, w - mobileGutter * 2));
+  };
+  const [size, setSize] = useState(get);
+  useEffect(() => {
+    const onResize = () => setSize(get());
+    window.addEventListener('resize', onResize);
+    window.addEventListener('orientationchange', onResize);
+    return () => {
+      window.removeEventListener('resize', onResize);
+      window.removeEventListener('orientationchange', onResize);
+    };
+  }, []);
+  return size;
+}
+
 // ─── Breathing controller hook ─────────────────────────────────────
 function useBreathing(active, pattern) {
   const [phase,    setPhase]    = useState('idle');
@@ -62,6 +86,7 @@ function AskScreen({ onSubmit, tone }) {
   const [value, setValue] = useState('');
   const inputRef = useRef(null);
   useEffect(() => { inputRef.current?.focus(); }, []);
+  const circleSize = useResponsiveCircleSize();
 
   const canSubmit = value.trim().length > 0;
   const handleSubmit = () => { if (canSubmit) onSubmit(value.trim()); };
@@ -72,7 +97,7 @@ function AskScreen({ onSubmit, tone }) {
       display: 'flex', alignItems: 'center', justifyContent: 'center',
       animation: 'fadeIn 0.6s ease',
     }}>
-      <BreathingCircle size={460} phase="idle" accent={tone.accent} paper={tone.bg} ink={tone.ink}>
+      <BreathingCircle size={circleSize} phase="idle" accent={tone.accent} paper={tone.bg} ink={tone.ink}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20, width: '100%' }}>
           <div style={{
             fontSize: 28, fontWeight: 500,
@@ -234,6 +259,7 @@ function ResultScreen({ emotion, quote, onAnother, onReset, tone, pattern }) {
   const [breathing,    setBreathing]    = useState(false);
   const [scienceOpen,  setScienceOpen]  = useState(DEFAULT_SCIENCE_OPEN);
   const { phase, progress, cycle } = useBreathing(breathing, pattern);
+  const circleSize = useResponsiveCircleSize();
 
   const circleContent = breathing ? (
     <div style={{ textAlign: 'center' }}>
@@ -264,7 +290,7 @@ function ResultScreen({ emotion, quote, onAnother, onReset, tone, pattern }) {
         you said · <span style={{ opacity: 0.85, letterSpacing: 1 }}>{emotion}</span>
       </div>
 
-      <BreathingCircle size={460} phase={phase} progress={progress} accent={tone.accent} paper={tone.bg} ink={tone.ink}>
+      <BreathingCircle size={circleSize} phase={phase} progress={progress} accent={tone.accent} paper={tone.bg} ink={tone.ink}>
         {circleContent}
       </BreathingCircle>
 
